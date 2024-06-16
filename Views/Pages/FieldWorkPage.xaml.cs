@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProviderSystem.Models;
 
 namespace ProviderSystem.Views.Pages
 {
@@ -23,6 +24,21 @@ namespace ProviderSystem.Views.Pages
         public FieldWorkPage()
         {
             InitializeComponent();
+        }
+
+        private void EditStatusBaseOnClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.DataContext is FieldWork fieldWork)
+            {
+                EditStatusFieldWorkWindow window = new(fieldWork);
+                window.Show();
+            }
+        }
+
+        private void AddRequestButtonClick(object sender, RoutedEventArgs e)
+        {
+            AddFieldworkWindow addFieldworkWindow = new AddFieldworkWindow();
+            addFieldworkWindow.Show();
         }
     }
 }

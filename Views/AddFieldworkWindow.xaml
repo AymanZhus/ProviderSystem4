@@ -8,66 +8,36 @@
         mc:Ignorable="d"
         Title="AddFieldworkWindow" Height="600" Width="800">
     <DockPanel>
-        <!--
-        <Label x:Name="header" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="Orange"
-        FontSize="35" FontWeight="Bold" Margin="0 0 0 25" Content="Добавление заявки"/>
+        <Label x:Name="header" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="Orange" Content="Добавление заявки"
+    FontSize="35" FontWeight="Bold" Margin="0 0 0 25" />
         <Grid>
-            <StackPanel Grid.Row="2">
-                <ItemsControl>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel ItemHeight="75" ItemWidth="75" />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <TextBlock Text="Клиент:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Специалист:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Услуга:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Цена:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Статус:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
             </StackPanel>
 
-            <Grid Grid.Column="1" Grid.RowSpan="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250" />
-                    <ColumnDefinition Width="900" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70" />
-                    <RowDefinition Height="70" />
-                    <RowDefinition Height="70" />
-                    <RowDefinition Height="70" />
-                    <RowDefinition Height="70" />
-                    <RowDefinition Height="70" />
-                    <RowDefinition Height="1*" />
-                </Grid.RowDefinitions>
-
-                <Label Content="Пользователь:" FontWeight="Bold" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                <ComboBox Grid.Column="1"  Width="450" Margin="0,0,0,0" HorizontalAlignment="Left" Height="40"
-                x:Name="Position" ItemsSource="{Binding DepartmentList}" SelectedItem="{Binding Department}">
-                </ComboBox>
-
-                <Label Content="Сотрудник" FontWeight="Bold" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18"/>
-                <ComboBox Grid.Column="1" Grid.Row="1"  Width="450" Margin="0,0,0,0" HorizontalAlignment="Left" Height="40"
-                x:Name="Positio" ItemsSource="{Binding DepartmentList}" SelectedItem="{Binding Department}">
-                </ComboBox>
-
-                <Label Content="Услуга" FontWeight="Bold" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18"/>
-                <ComboBox Grid.Column="1" Grid.Row="2"  Width="450" Margin="0,0,0,0" HorizontalAlignment="Left" Height="40"
-                x:Name="Posito" ItemsSource="{Binding DepartmentList}" SelectedItem="{Binding Department}">
-                </ComboBox>
-
-                <Label Content="Стоимость:" FontWeight="Bold" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18"/>
-                <TextBox x:Name="PhoneTextbox"  FontSize="16" Text="{Binding PhoneNumber}" Grid.Column="1" Padding="10" Grid.Row="3" VerticalAlignment="Center"  HorizontalAlignment="Left" Width="350"/>
-
-                <Label Content="Статус:" FontWeight="Bold" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="18"/>
-                <TextBox x:Name="PhoneTextbx"  FontSize="16" Text="{Binding PhoneNumber}" Grid.Column="1" Padding="10" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350"/>
-
-
-
-                <Button Click="SavePersonal" Content="Сохранить" Width="200" Height="50" Cursor="" Grid.Row="5" Grid.Column="3" FontSize="18"/>
-                <Button Click="goBack" Content="Назад" IsCancel="True" Width="200" Height="50" Grid.Row="6" Grid.Column="3" FontSize="18"/>
-
-            </Grid>
-
-
-            
+            <StackPanel Grid.Column="1">
+                <ComboBox x:Name="Client" Margin="10" Height="35" DisplayMemberPath="Fio"/>
+                <ComboBox x:Name="Worker" Margin="10" Height="35" DisplayMemberPath="Fio"/>
+                <ComboBox x:Name="Service" Margin="10" Height="35" DisplayMemberPath="Name"/>
+                <TextBox x:Name="Price" Margin="10" Height="35"/>
+                <ComboBox x:Name="Status" Margin="10" Height="35"/>
+            </StackPanel>
+            <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Добавить заявку" FontSize="27"
+                Margin="15" Height="50" VerticalAlignment="Top" Click="AddRequest"/>
         </Grid>
-        -->
     </DockPanel>
 </Window>

@@ -33,7 +33,7 @@
 
 
             <Button x:Name="createPersonButton" HorizontalAlignment="Right" 
-            Background="White" Margin="150,0,0,0" Command="{Binding GoToAddRequestWindowCommand}"
+            Background="White" Margin="150,0,0,0" Click="AddRequestButtonClick"
             Content="Добавить Тариф" Height="60" FontSize="24">
             </Button>
         </StackPanel>
@@ -94,8 +94,7 @@
                             <Run FontWeight="Medium" Text="{Binding StatusOfWork}" />
                             </TextBlock>
 
-
-                            <Button  Grid.Row="6"  Content="Изменить" Width="115" Height="25"/>
+                            <Button  Grid.Row="6"  Content="Изменить статус" Click="EditStatusBaseOnClick" Width="115" Height="25"/>
 
                         </Grid>
                     </StackPanel>
