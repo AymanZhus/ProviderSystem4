@@ -24,7 +24,7 @@
         <StackPanel Height="200" VerticalAlignment="Bottom">
             <Label Width="350" Height="50" FontSize="24" Content="Пользователь: " VerticalAlignment="Bottom"/>
             <Label Width="350" Height="50" FontSize="24" x:Name="FIOtextbox"/>
-            <Button Content="Выйти" Height="70" Width="250" FontSize="30" FontWeight="Bold" />
+            <Button Content="Выйти" Height="70" Width="250" FontSize="30" FontWeight="Bold" Click="Exit"/>
         </StackPanel>
 
         <Frame  x:Name="mainFrame" Grid.Column="1"  NavigationUIVisibility="Hidden" />

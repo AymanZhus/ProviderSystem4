@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Height="650" VerticalAlignment="Top" Margin="0,20,0,0">
-            <Button Content="Мой профиль" Height="50" FontSize="24" Margin="0,0,0,0"/>
+            <Button Content="Мой профиль" Height="50" FontSize="24" Margin="0,0,0,0" Click="GoToMyProfile"/>
             <Button Content="Тарифы" Height="50" FontSize="24" Margin="0,40,0,0"/>
             <Button Content="Журнал событий" Height="50" FontSize="24" Margin="0,40,0,0"/>
             <Button Content="Заявки" Height="50" FontSize="24" Margin="0,40,0,0"/>
@@ -25,9 +25,9 @@
         </StackPanel>
 
         <StackPanel Height="200" VerticalAlignment="Bottom">
-            <TextBox Width="350" Height="50" FontSize="24" Text="Пользователь: " VerticalAlignment="Bottom"/>
-            <TextBox Width="350" Height="50" FontSize="24" x:Name="FIOtextbox"/>
-            <Button Content="Выйти" Height="70" VerticalAlignment="Bottom" Width="250" FontSize="24" FontWeight="Bold" />
+            <TextBox Width="170" Height="50" FontSize="24" Text="Пользователь: " VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+            <TextBox Width="170" Height="50" FontSize="24" x:Name="FIOtextbox" HorizontalAlignment="Left" />
+            <Button Content="Выйти" Height="70" VerticalAlignment="Bottom" Width="250" FontSize="24" FontWeight="Bold" Click="Exit"/>
         </StackPanel>
 
         <Frame  x:Name="mainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" />

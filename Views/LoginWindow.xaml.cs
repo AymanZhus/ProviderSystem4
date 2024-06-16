@@ -1,5 +1,6 @@
 ﻿using ProviderSystem.Models;
 using ProviderSystem.Views;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,17 +36,21 @@ namespace ProviderSystem
 
                 if (user != null && user.IdPosition == 1)
                 {
-                    var wnd = new AdminWindow(user.IdUser);
+                    var wnd = new AdminWindow(user);
                     this.Close();
                     wnd.Show();
                 }
                 else if (user != null && user.IdPosition == 2)
                 {
-                    MessageBox.Show("Специалист", "Специалист!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    var wnd = new WorkerWindow(user);
+                    this.Close();
+                    wnd.Show();
                 }
                 else if (user != null && user.IdPosition == 3)
                 {
-                    MessageBox.Show("Клиент", "Клиент!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    var wnd = new ClientWindow(user);
+                    this.Close();
+                    wnd.Show();
                 }
                 else
                 {
