@@ -13,9 +13,9 @@ public partial class TariffPlan
 
     public int Price { get; set; }
 
-    public int? Rating { get; set; }
-
     public int Gigabytes { get; set; }
+
+    public int? Rating { get; set; }
 
     public virtual ICollection<Journal> Journals { get; set; } = new List<Journal>();
 
