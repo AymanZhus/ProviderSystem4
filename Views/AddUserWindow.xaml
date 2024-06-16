@@ -1,0 +1,49 @@
+﻿<Window x:Class="ProviderSystem.Views.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProviderSystem.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:vm="clr-namespace:ProviderSystem.ViewModels"
+        mc:Ignorable="d"
+        Title="AddUserWindow" Height="800" Width="800">
+
+    <DockPanel>
+        <Label x:Name="header" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="Orange" Content="Добавление клиента"
+        FontSize="35" FontWeight="Bold" Margin="0 0 0 25" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <TextBlock Text="ФИО:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Почта:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Город:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Адрес:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Баланс:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Логин:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+                <TextBlock Text="Пароль:" HorizontalAlignment="Center" FontSize="26" Margin="10"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBox x:Name="Name" Margin="10" Height="35"/>
+                <TextBox x:Name="Email" Margin="10" Height="35"/>
+                <ComboBox x:Name="City" Margin="10" Height="35"/>
+                <TextBox x:Name="Address" Margin="10" Height="35"/>
+                <TextBox x:Name="Balance" Margin="10" Height="35"/>
+                <TextBox x:Name="Login" Margin="10" Height="35"/>
+                <TextBox x:Name="Password" Margin="10" Height="35"/>
+            </StackPanel>
+            <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Добавить нового клиента" FontSize="27"
+                    Margin="15" Height="50" VerticalAlignment="Top" Click="AddClient"/>
+        </Grid>
+    </DockPanel>
+</Window>

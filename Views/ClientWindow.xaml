@@ -1,0 +1,37 @@
+﻿<Window x:Class="ProviderSystem.Views.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ProviderSystem.Views"
+        mc:Ignorable="d"
+        Title="Главное окно" Height="800" Width="1350">
+    
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Height="650" VerticalAlignment="Top" Margin="0,20,0,0">
+            <Button Content="Мой профиль" Height="50" FontSize="24" Margin="0,0,0,0"/>
+            <Button Content="Тарифы" Height="50" FontSize="24" Margin="0,40,0,0"/>
+            <Button Content="Журнал событий" Height="50" FontSize="24" Margin="0,40,0,0"/>
+            <Button Content="Заявки" Height="50" FontSize="24" Margin="0,40,0,0"/>
+            <Button Content="Счета" Height="50" FontSize="24" Margin="0,40,0,0"/>
+            <Button Content="Написать админитсратору" Height="50" FontSize="24" Margin="0,40,0,0"/>
+        </StackPanel>
+
+        <StackPanel Height="200" VerticalAlignment="Bottom">
+            <TextBox Width="350" Height="50" FontSize="24" Text="Пользователь: " VerticalAlignment="Bottom"/>
+            <TextBox Width="350" Height="50" FontSize="24" x:Name="FIOtextbox"/>
+            <Button Content="Выйти" Height="70" VerticalAlignment="Bottom" Width="250" FontSize="24" FontWeight="Bold" />
+        </StackPanel>
+
+        <Frame  x:Name="mainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" />
+
+        
+    </Grid>
+</Window>
