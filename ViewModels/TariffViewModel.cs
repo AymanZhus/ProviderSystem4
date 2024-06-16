@@ -16,6 +16,25 @@ namespace ProviderSystem.ViewModels
         public TariffViewModel()
         {
             Tariffs = new ObservableCollection<TariffPlan>(context.TariffPlans);
+
+            // Проходимся по каждому тарифу
+            foreach (var tariff in Tariffs)
+            {
+                // Получаем все оценки для текущего тарифа из таблицы UserRating
+                var ratingsForTariff = context.UserRatings.Where(ur => ur.IdTariffPlan == tariff.IdTariffPlan).ToList();
+
+                // Вычисляем среднюю оценку
+                if (ratingsForTariff.Any())
+                {
+                    double averageRating = ratingsForTariff.Average(ur => ur.Mark);
+                    tariff.Rating = (int)averageRating;
+                }
+                else
+                {
+                    // Если для тарифа нет оценок, можно установить дефолтное значение или оставить как есть
+                    tariff.Rating = 0; // Например, устанавливаем рейтинг 0
+                }
+            }
         }
 
         public ProviderDbContext context = new();
